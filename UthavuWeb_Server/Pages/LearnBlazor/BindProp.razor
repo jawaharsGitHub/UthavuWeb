@@ -1,0 +1,152 @@
+﻿@page "/learnblazor/bondprop"
+
+<h3 class="text-success">Individual Product</h3>
+<div class="row">
+
+	<div class="col-6 border p-3">
+		<h3 class="text-primary">Product Playground</h3> <hr />
+		<div>
+			Price: <input type="number" @bind-value="@product.Price" @bind-value:event="oninput" />
+		</div>
+		<div>
+			Active: <input type="checkbox" @bind-value="@product.IsActive" checked=@(product.IsActive ? "checked" : null) />
+		</div>
+		<div>
+			Size: <select @bind="@selectedSize">
+				@for (int i = 0; i < @product.Sizes.Count(); i++)
+				{
+					<option value="@product.Sizes.ToList()[i].SizeId">@product.Sizes.ToList()[i].SizeName</option>
+				}
+			</select>
+		</div>
+	</div>
+
+	<div class="col-6 border p-2">
+
+
+		<h3 class="text-primary">Product Summary</h3> <hr />
+
+		<div>
+			Name: @product.Name
+		</div>
+		<div>
+			Id: @product.Id
+		</div>
+		<div>
+			Status: @(product.IsActive ? "Active" : "InActive") <br />
+		</div>
+		<div>
+			Price: @product.Price <br />
+		</div>
+		<div>
+			Selected Size: @selectedSize <br />
+		</div>
+
+		@*Price: <input type="number" @bind="@product.Price" @bind:event="oninput"/>*@
+
+
+	</div>
+
+	<div class="col-12 pt-4">
+		<h2 class="text-success">Product Table</h2>
+		<table class="table table-striped">
+			<tbody>
+			@foreach (var item in productlist)
+			{
+				<tr>
+					<td>
+						<input type="text" @bind-value="item.Name" @bind-value:event="oninput"/>
+					</td>
+					<td>
+						<input type="text" @bind-value="item.Price"/>
+					</td>
+					<td>
+						<input type="checkbox" @bind-value="item.IsActive" checked=@(item.IsActive ? "checked" : null)/>
+					</td>
+				</tr>
+			}
+			</tbody>
+
+		</table>
+	</div>
+
+	<div class="col-12 pt-4">
+		<h2 class="text-success">Product Summary</h2>
+		
+			@foreach (var item in productlist)
+			{
+				<p> @item.Name [@item.Price] is @(item.IsActive ? "ACTIVE" : "INACTIVE")</p>
+				
+			}
+			
+
+		
+	</div>
+
+
+
+</div>
+
+@code {
+
+	private string selectedSize = "";
+
+	Product product = new Product()
+		{
+			Id = 1,
+			IsActive = true,
+			Name = "p1",
+			Price = 9.99,
+			Sizes = new List<Size>()
+		{
+			new Size() { SizeId = 1, SizeName = "S", SizePrice = 1.0 }  ,
+			new Size() { SizeId = 2, SizeName = "M", SizePrice = 2.0 }  ,
+			new Size() { SizeId = 3, SizeName = "L", SizePrice = 3.0 }  ,
+
+		}
+
+		};
+
+	List<Product> productlist = new List<Product>();
+
+	protected override void OnInitialized()
+	{
+		//base.OnInitialized();
+
+		productlist.Add(new Product()
+			{
+				Id = 1,
+				IsActive = true,
+				Name = "p2",
+				Price = 9.99,
+				Sizes = new List<Size>()
+		{
+			new Size() { SizeId = 1, SizeName = "S2", SizePrice = 1.0 }  ,
+			new Size() { SizeId = 2, SizeName = "M2", SizePrice = 2.0 }  ,
+			new Size() { SizeId = 3, SizeName = "L2", SizePrice = 3.0 }  ,
+
+		}
+
+			});
+
+		productlist.Add(new Product()
+			{
+				Id = 1,
+				IsActive = true,
+				Name = "p3",
+				Price = 9.99,
+				Sizes = new List<Size>()
+		{
+			new Size() { SizeId = 1, SizeName = "S3", SizePrice = 1.0 }  ,
+			new Size() { SizeId = 2, SizeName = "M3", SizePrice = 2.0 }  ,
+			new Size() { SizeId = 3, SizeName = "L3", SizePrice = 3.0 }  ,
+
+		}
+
+			});
+
+
+
+	}
+
+}

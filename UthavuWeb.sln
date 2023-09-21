@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UthavuWeb_Server", "UthavuWeb_Server\UthavuWeb_Server.csproj", "{E5CDE85B-B51C-471F-B7D6-6FDEB7A664F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uthavu_Models", "Uthavu_Models\Uthavu_Models.csproj", "{9894FC98-B24E-491C-A8A6-125E32A4DFDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E5CDE85B-B51C-471F-B7D6-6FDEB7A664F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5CDE85B-B51C-471F-B7D6-6FDEB7A664F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5CDE85B-B51C-471F-B7D6-6FDEB7A664F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9894FC98-B24E-491C-A8A6-125E32A4DFDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9894FC98-B24E-491C-A8A6-125E32A4DFDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9894FC98-B24E-491C-A8A6-125E32A4DFDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9894FC98-B24E-491C-A8A6-125E32A4DFDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
